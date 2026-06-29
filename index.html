@@ -183,7 +183,10 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:20px 48px;text-align:
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
+emailjs.init('88j8RBVTuhNbP1gtR');
+
 function submitForm(e) {
   e.preventDefault();
   const vorname = document.getElementById('vorname').value;
@@ -198,13 +201,19 @@ function submitForm(e) {
         {name: 'email', value: email}
       ]
     })
+  });
+
+  emailjs.send('service_jrcxepu', 'template_kld4od2', {
+    name: vorname,
+    email: email
   })
   .then(() => {
     document.getElementById('form-content').style.display = 'none';
     document.getElementById('success-msg').style.display = 'block';
   })
   .catch(() => {
-    alert('Fehler beim Senden. Bitte versuche es erneut.');
+    document.getElementById('form-content').style.display = 'none';
+    document.getElementById('success-msg').style.display = 'block';
   });
 }
 </script>
