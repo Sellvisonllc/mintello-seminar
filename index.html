@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kostenloses KI-Seminar | mintello</title>
+<meta name="description" content="In 60 Minuten lernst du, wie du KI-Assistenten für den Gesundheitssektor verkaufst und 195–695 $ pro Auftrag verdienst.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0D1B2A;
+  --teal:#0D9488;
+  --teal-light:#5DCAA5;
+  --teal-dim:rgba(13,148,136,0.15);
+  --teal-border:rgba(13,148,136,0.3);
+  --white:#ffffff;
+  --gray:#64748B;
+  --text-muted:rgba(255,255,255,0.6);
+  --text-dim:rgba(255,255,255,0.35);
+  --card-bg:rgba(255,255,255,0.04);
+  --input-bg:rgba(255,255,255,0.07);
+  --input-border:rgba(255,255,255,0.15);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.logo{font-family:'Sora',sans-serif;font-size:20px;font-weight:700;color:var(--teal);letter-spacing:-0.3px}
+.nav-badge{background:var(--teal-dim);color:var(--teal-light);font-size:12px;padding:4px 12px;border-radius:20px;border:1px solid var(--teal-border)}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1100px;margin:0 auto;padding:80px 48px 64px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--teal-dim);color:var(--teal-light);font-size:12px;padding:6px 14px;border-radius:20px;border:1px solid var(--teal-border);margin-bottom:24px}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block}
+h1{font-family:'Sora',sans-serif;font-size:38px;font-weight:700;line-height:1.2;letter-spacing:-0.5px;margin-bottom:16px}
+h1 span{color:var(--teal)}
+.hero-sub{font-size:16px;color:var(--text-muted);line-height:1.65;margin-bottom:32px;max-width:480px}
+.bullets{display:flex;flex-direction:column;gap:12px}
+.bullet{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,0.8)}
+.bullet-icon{width:18px;height:18px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;font-size:10px}
+
+/* FORM CARD */
+.form-card{background:var(--card-bg);border:1px solid var(--teal-border);border-radius:16px;padding:32px}
+.form-card h3{font-size:18px;font-weight:600;margin-bottom:6px}
+.form-card p{font-size:13px;color:var(--text-muted);margin-bottom:24px}
+.form-group{margin-bottom:14px}
+.form-group input{width:100%;background:var(--input-bg);border:1px solid var(--input-border);border-radius:10px;padding:12px 16px;font-size:14px;color:var(--white);font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s}
+.form-group input:focus{border-color:var(--teal)}
+.form-group input::placeholder{color:rgba(255,255,255,0.3)}
+.cta-btn{width:100%;background:var(--teal);color:var(--white);border:none;border-radius:10px;padding:14px;font-size:15px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:0.2px;transition:background 0.2s;margin-top:4px}
+.cta-btn:hover{background:#0f7a6e}
+.form-note{font-size:11px;color:var(--text-dim);text-align:center;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:5px}
+
+/* DIVIDER */
+.divider{border:none;border-top:1px solid rgba(255,255,255,0.07);margin:0}
+
+/* STATS */
+.stats{display:flex;justify-content:center;gap:56px;padding:40px 48px;max-width:1100px;margin:0 auto}
+.stat-num{font-family:'Sora',sans-serif;font-size:26px;font-weight:700;color:var(--teal)}
+.stat-label{font-size:12px;color:var(--text-muted);margin-top:2px}
+
+/* FEATURES */
+.features{max-width:1100px;margin:0 auto;padding:56px 48px}
+.section-label{font-size:12px;color:var(--teal-light);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
+.features h2{font-family:'Sora',sans-serif;font-size:28px;font-weight:700;margin-bottom:40px;letter-spacing:-0.3px}
+.features-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.feature-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:20px 24px;display:flex;gap:14px;align-items:flex-start}
+.feature-num{font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:var(--teal);min-width:24px;padding-top:2px}
+.feature-text{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.55}
+.feature-text strong{color:var(--white);font-weight:600;display:block;margin-bottom:3px}
+
+/* HOST */
+.host{background:rgba(13,148,136,0.07);border-top:1px solid var(--teal-border);border-bottom:1px solid var(--teal-border);padding:40px 48px}
+.host-inner{max-width:600px;margin:0 auto;display:flex;gap:20px;align-items:center}
+.host-avatar{width:56px;height:56px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:18px;font-weight:700;flex-shrink:0}
+.host-name{font-size:16px;font-weight:600;margin-bottom:4px}
+.host-bio{font-size:13px;color:var(--text-muted);line-height:1.5}
+
+/* FOOTER CTA */
+.footer-cta{text-align:center;padding:64px 48px;max-width:1100px;margin:0 auto}
+.footer-cta h2{font-family:'Sora',sans-serif;font-size:28px;font-weight:700;margin-bottom:8px;letter-spacing:-0.3px}
+.footer-cta p{color:var(--text-muted);font-size:14px;margin-bottom:28px}
+.footer-cta .cta-btn{max-width:320px;margin:0 auto;display:block}
+
+/* FOOTER */
+footer{border-top:1px solid rgba(255,255,255,0.06);padding:20px 48px;text-align:center}
+.footer-links{font-size:12px;color:rgba(255,255,255,0.25)}
+.footer-links a{color:rgba(255,255,255,0.25);text-decoration:none}
+.footer-links a:hover{color:var(--text-muted)}
+
+/* SUCCESS */
+.success-msg{display:none;text-align:center;padding:20px 0}
+.success-msg .check{width:48px;height:48px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:22px}
+.success-msg h4{font-size:18px;font-weight:600;margin-bottom:6px}
+.success-msg p{font-size:13px;color:var(--text-muted)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:14px 24px}
+  .hero{grid-template-columns:1fr;padding:48px 24px 40px;gap:32px}
+  h1{font-size:28px}
+  .stats{gap:32px;padding:32px 24px;flex-wrap:wrap}
+  .features{padding:40px 24px}
+  .features-grid{grid-template-columns:1fr}
+  .host{padding:32px 24px}
+  .footer-cta{padding:48px 24px}
+  footer{padding:16px 24px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="logo">mintello</span>
+  <span class="nav-badge">Kostenloses Seminar</span>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">Kostenloses Online-Seminar · Sofortiger Zugang</div>
+    <h1>Wie du mit KI-Assistenten <span>500–2.000 €</span> pro Woche verdienst — ohne Vorkenntnisse, ohne eigenes Produkt</h1>
+    <p class="hero-sub">In 60 Minuten lernst du, wie KI-Assistenten für Pflegeheime und Arztpraxen funktionieren — und wie du sie als Dienstleistung verkaufst.</p>
+    <div class="bullets">
+      <div class="bullet"><div class="bullet-icon">✓</div><span>Wie Klara und Tina funktionieren — und warum Pflegeheime &amp; Arztpraxen dafür zahlen</span></div>
+      <div class="bullet"><div class="bullet-icon">✓</div><span>Wie du deinen ersten Auftrag in 14 Tagen landest — ohne Kaltakquise-Erfahrung</span></div>
+      <div class="bullet"><div class="bullet-icon">✓</div><span>Welche 3 Tools du brauchst — und welche du niemals brauchst</span></div>
+      <div class="bullet"><div class="bullet-icon">✓</div><span>Wie das Affiliate-System funktioniert — und wie du 99–999 € pro Abschluss verdienst</span></div>
+      <div class="bullet"><div class="bullet-icon">✓</div><span>Live-Demo: Tina nimmt einen Anruf entgegen — du siehst es in Echtzeit</span></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="form-card">
+      <div id="form-content">
+        <h3>Jetzt kostenlos anmelden</h3>
+        <p>Sofortiger Zugang nach Anmeldung</p>
+        <form id="optin-form" onsubmit="submitForm(event)">
+          <div class="form-group"><input type="text" id="vorname" placeholder="Vorname" required></div>
+          <div class="form-group"><input type="text" id="nachname" placeholder="Nachname" required></div>
+          <div class="form-group"><input type="email" id="email" placeholder="deine@email.de" required></div>
+          <button type="submit" class="cta-btn">Kostenloses Seminar sichern →</button>
+        </form>
+        <p class="form-note">🔒 Kein Spam · Jederzeit abmeldbar · DSGVO-konform</p>
+      </div>
+      <div class="success-msg" id="success-msg">
+        <div class="check">✓</div>
+        <h4>Du bist dabei!</h4>
+        <p>Schau in dein E-Mail-Postfach — dein Zugang ist unterwegs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<div class="stats">
+  <div><div class="stat-num">2</div><div class="stat-label">KI-Produkte live</div></div>
+  <div><div class="stat-num">195–695 $</div><div class="stat-label">pro Auftrag</div></div>
+  <div><div class="stat-num">60 Min</div><div class="stat-label">Seminar-Dauer</div></div>
+  <div><div class="stat-num">DACH</div><div class="stat-label">Zielmarkt</div></div>
+</div>
+
+<hr class="divider">
+
+<section class="features">
+  <div class="section-label">Was du lernst</div>
+  <h2>Das erwartet dich im Seminar</h2>
+  <div class="features-grid">
+    <div class="feature-item"><span class="feature-num">01</span><div class="feature-text"><strong>Das Marktpotenzial</strong>Warum Pflegeheime und Arztpraxen KI-Assistenten dringend brauchen und wer bereits zahlt</div></div>
+    <div class="feature-item"><span class="feature-num">02</span><div class="feature-text"><strong>Live-Demo Klara &amp; Tina</strong>Du siehst die Produkte in Echtzeit und verstehst warum Kunden kaufen</div></div>
+    <div class="feature-item"><span class="feature-num">03</span><div class="feature-text"><strong>Das Geschäftsmodell</strong>Setup-Gebühr + monatliche Provision, ohne eigenes Risiko</div></div>
+    <div class="feature-item"><span class="feature-num">04</span><div class="feature-text"><strong>Dein erster Kunde</strong>Konkrete Schritt-für-Schritt Anleitung für die erste Akquise in 14 Tagen</div></div>
+    <div class="feature-item"><span class="feature-num">05</span><div class="feature-text"><strong>Die 4 Pakete</strong>Wie du als Affiliate 99–999 € pro Abschluss verdienst</div></div>
+    <div class="feature-item"><span class="feature-num">06</span><div class="feature-text"><strong>Tools &amp; Setup</strong>Genau welche 3 Tools du brauchst — und wie du sie in einem Tag einrichtest</div></div>
+  </div>
+</section>
+
+<div class="host">
+  <div class="host-inner">
+    <div class="host-avatar">JH</div>
+    <div>
+      <div class="host-name">Jürgen Hering</div>
+      <div class="host-bio">KI-Automatisierer aus dem DACH-Raum · Gründer von Mintello · Entwickler von Klara und Tina · Spezialist für KI-Lösungen im Gesundheitssektor</div>
+    </div>
+  </div>
+</div>
+
+<section class="footer-cta">
+  <h2>Bereit loszulegen?</h2>
+  <p>Sofortiger Zugang · Kostenlos · Kein Spam</p>
+  <button class="cta-btn" onclick="document.getElementById('email').focus();window.scrollTo({top:0,behavior:'smooth'})">Kostenloses Seminar sichern →</button>
+</section>
+
+<hr class="divider">
+
+<footer>
+  <div class="footer-links">
+    © 2025 Mintello &nbsp;·&nbsp;
+    <a href="https://mintello.de/impressum">Impressum</a> &nbsp;·&nbsp;
+    <a href="https://mintello.de/datenschutz">Datenschutz</a> &nbsp;·&nbsp;
+    <a href="mailto:info@mintello.de">info@mintello.de</a>
+  </div>
+</footer>
+
+<script>
+function submitForm(e) {
+  e.preventDefault();
+  const vorname = document.getElementById('vorname').value;
+  const nachname = document.getElementById('nachname').value;
+  const email = document.getElementById('email').value;
+
+  // Hier später Brevo/Mailchimp API eintragen
+  // Vorerst: einfache mailto als Fallback
+  document.getElementById('form-content').style.display = 'none';
+  document.getElementById('success-msg').style.display = 'block';
+
+  // Optional: Daten per EmailJS oder Formspree senden
+  // fetch('https://formspree.io/f/DEIN_KEY', {method:'POST', body: JSON.stringify({vorname,nachname,email}), headers:{'Content-Type':'application/json'}})
+}
+</script>
+
+</body>
+</html>
