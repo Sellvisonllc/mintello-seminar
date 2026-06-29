@@ -26,9 +26,13 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* NAV */
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 48px;border-bottom:1px solid rgba(255,255,255,0.06)}
 .logo{font-family:'Sora',sans-serif;font-size:20px;font-weight:700;color:var(--teal);letter-spacing:-0.3px}
 .nav-badge{background:var(--teal-dim);color:var(--teal-light);font-size:12px;padding:4px 12px;border-radius:20px;border:1px solid var(--teal-border)}
+
+/* HERO */
 .hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1100px;margin:0 auto;padding:80px 48px 64px}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--teal-dim);color:var(--teal-light);font-size:12px;padding:6px 14px;border-radius:20px;border:1px solid var(--teal-border);margin-bottom:24px}
 .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block}
@@ -38,6 +42,8 @@ h1 span{color:var(--teal)}
 .bullets{display:flex;flex-direction:column;gap:12px}
 .bullet{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,0.8)}
 .bullet-icon{width:18px;height:18px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;font-size:10px}
+
+/* FORM CARD */
 .form-card{background:var(--card-bg);border:1px solid var(--teal-border);border-radius:16px;padding:32px}
 .form-card h3{font-size:18px;font-weight:600;margin-bottom:6px}
 .form-card p{font-size:13px;color:var(--text-muted);margin-bottom:24px}
@@ -48,10 +54,16 @@ h1 span{color:var(--teal)}
 .cta-btn{width:100%;background:var(--teal);color:var(--white);border:none;border-radius:10px;padding:14px;font-size:15px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:0.2px;transition:background 0.2s;margin-top:4px}
 .cta-btn:hover{background:#0f7a6e}
 .form-note{font-size:11px;color:var(--text-dim);text-align:center;margin-top:12px;display:flex;align-items:center;justify-content:center;gap:5px}
+
+/* DIVIDER */
 .divider{border:none;border-top:1px solid rgba(255,255,255,0.07);margin:0}
+
+/* STATS */
 .stats{display:flex;justify-content:center;gap:56px;padding:40px 48px;max-width:1100px;margin:0 auto}
 .stat-num{font-family:'Sora',sans-serif;font-size:26px;font-weight:700;color:var(--teal)}
 .stat-label{font-size:12px;color:var(--text-muted);margin-top:2px}
+
+/* FEATURES */
 .features{max-width:1100px;margin:0 auto;padding:56px 48px}
 .section-label{font-size:12px;color:var(--teal-light);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
 .features h2{font-family:'Sora',sans-serif;font-size:28px;font-weight:700;margin-bottom:40px;letter-spacing:-0.3px}
@@ -60,23 +72,33 @@ h1 span{color:var(--teal)}
 .feature-num{font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:var(--teal);min-width:24px;padding-top:2px}
 .feature-text{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.55}
 .feature-text strong{color:var(--white);font-weight:600;display:block;margin-bottom:3px}
+
+/* HOST */
 .host{background:rgba(13,148,136,0.07);border-top:1px solid var(--teal-border);border-bottom:1px solid var(--teal-border);padding:40px 48px}
 .host-inner{max-width:600px;margin:0 auto;display:flex;gap:20px;align-items:center}
 .host-avatar{width:56px;height:56px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:18px;font-weight:700;flex-shrink:0}
 .host-name{font-size:16px;font-weight:600;margin-bottom:4px}
 .host-bio{font-size:13px;color:var(--text-muted);line-height:1.5}
+
+/* FOOTER CTA */
 .footer-cta{text-align:center;padding:64px 48px;max-width:1100px;margin:0 auto}
 .footer-cta h2{font-family:'Sora',sans-serif;font-size:28px;font-weight:700;margin-bottom:8px;letter-spacing:-0.3px}
 .footer-cta p{color:var(--text-muted);font-size:14px;margin-bottom:28px}
 .footer-cta .cta-btn{max-width:320px;margin:0 auto;display:block}
+
+/* FOOTER */
 footer{border-top:1px solid rgba(255,255,255,0.06);padding:20px 48px;text-align:center}
 .footer-links{font-size:12px;color:rgba(255,255,255,0.25)}
 .footer-links a{color:rgba(255,255,255,0.25);text-decoration:none}
 .footer-links a:hover{color:var(--text-muted)}
+
+/* SUCCESS */
 .success-msg{display:none;text-align:center;padding:20px 0}
 .success-msg .check{width:48px;height:48px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:22px}
 .success-msg h4{font-size:18px;font-weight:600;margin-bottom:6px}
 .success-msg p{font-size:13px;color:var(--text-muted)}
+
+/* RESPONSIVE */
 @media(max-width:768px){
   nav{padding:14px 24px}
   .hero{grid-template-columns:1fr;padding:48px 24px 40px;gap:32px}
@@ -108,6 +130,7 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:20px 48px;text-align:
       <div class="bullet"><div class="bullet-icon">✓</div><span>Welche 3 Tools du brauchst — und welche du niemals brauchst</span></div>
       <div class="bullet"><div class="bullet-icon">✓</div><span>Wie das Affiliate-System funktioniert — und wie du 99–999 € pro Abschluss verdienst</span></div>
       <div class="bullet"><div class="bullet-icon">✓</div><span>Live-Demo: Tina nimmt einen Anruf entgegen — du siehst es in Echtzeit</span></div>
+    <div class="bullet"><div class="bullet-icon">✓</div><span>Wie das Affiliate-System funktioniert — und wie du 99–999 € pro Abschluss verdienst</span></div>
     </div>
   </div>
 
@@ -183,15 +206,13 @@ footer{border-top:1px solid rgba(255,255,255,0.06);padding:20px 48px;text-align:
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-emailjs.init('88j8RBVTuhNbP1gtR');
-
 function submitForm(e) {
   e.preventDefault();
   const vorname = document.getElementById('vorname').value;
   const email = document.getElementById('email').value;
 
+  // HubSpot CRM
   fetch('https://api.hsforms.com/submissions/v3/integration/submit/148763123/0dc23672-3a46-4bf0-8a58-37511e610d6c', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
@@ -203,9 +224,11 @@ function submitForm(e) {
     })
   });
 
-  emailjs.send('service_jrcxepu', 'template_kld4od2', {
-    name: vorname,
-    email: email
+  // Bestätigungs-E-Mail via Formspree
+  fetch('https://formspree.io/f/xojoaren', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({name: vorname, email: email, _replyto: email})
   })
   .then(() => {
     document.getElementById('form-content').style.display = 'none';
