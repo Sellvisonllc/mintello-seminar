@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mintello Partnerprogramm – Wähle deinen Einstieg</title>
+<style>
+  :root{
+    --navy: #0D1B2A;
+    --navy-2: #14243a;
+    --navy-3: #1a2c46;
+    --gold: #E8B84A;
+    --gold-light: #F7D178;
+    --silver: #C4CAD1;
+    --cream: #F4F1EA;
+    --grey: #9AA6B2;
+    --ok: #7FB88A;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--navy);
+    color:#fff;
+    font-family:'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height:1.5;
+  }
+  .bg-circle{
+    position:fixed; top:-200px; right:-200px;
+    width:600px; height:600px; border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, var(--navy-3), var(--navy-2));
+    z-index:0; pointer-events:none;
+  }
+  header{
+    text-align:center; padding:56px 20px 24px; position:relative; z-index:1;
+  }
+  .kicker{
+    color:var(--gold); letter-spacing:2px; font-weight:700; font-size:13px;
+    text-transform:uppercase; margin-bottom:14px;
+  }
+  h1{
+    font-family:Georgia, 'Times New Roman', serif;
+    font-size:clamp(28px, 5vw, 44px);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+  .sub{
+    color:var(--grey); max-width:560px; margin:0 auto; font-size:16px;
+  }
+  main{
+    max-width:1180px; margin:0 auto; padding:24px 20px 80px; position:relative; z-index:1;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:20px;
+    margin-top:40px;
+  }
+  @media (max-width: 980px){ .grid{ grid-template-columns:repeat(2, 1fr);} }
+  @media (max-width: 620px){ .grid{ grid-template-columns:1fr;} }
+
+  .card{
+    background:var(--navy-2);
+    border-radius:14px;
+    padding:28px 22px;
+    display:flex; flex-direction:column;
+    border:1px solid rgba(255,255,255,0.06);
+    position:relative;
+  }
+  .card.pro{ border:1px solid rgba(196,202,209,0.35); }
+  .card.ultra{
+    background:linear-gradient(160deg, var(--navy-2), #26241a);
+    border:1px solid rgba(232,184,74,0.45);
+  }
+  .badge{
+    position:absolute; top:-12px; right:20px;
+    background:var(--gold); color:var(--navy);
+    font-size:11px; font-weight:700; letter-spacing:1px;
+    padding:4px 10px; border-radius:20px; text-transform:uppercase;
+  }
+  .tier-name{ font-size:13px; letter-spacing:2px; text-transform:uppercase; font-weight:700; color:var(--grey); margin-bottom:6px;}
+  .card.pro .tier-name{ color:var(--silver); }
+  .card.ultra .tier-name{ color:var(--gold); }
+
+  .price-row{ display:flex; align-items:baseline; gap:10px; margin-bottom:2px; flex-wrap:wrap; }
+  .price{ font-size:34px; font-weight:700; font-family:Georgia, serif; }
+  .price-old{ color:var(--grey); text-decoration:line-through; font-size:16px; }
+  .commission{ color:var(--gold); font-size:13px; font-weight:600; margin-bottom:20px; }
+
+  .features{ list-style:none; padding:0; margin:0 0 26px; flex-grow:1; }
+  .features li{
+    font-size:14px; color:#dfe4ea; padding:9px 0;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+    display:flex; gap:10px; align-items:flex-start;
+  }
+  .features li:last-child{ border-bottom:none; }
+  .features li::before{
+    content:"✓"; color:var(--ok); font-weight:700; flex-shrink:0;
+  }
+
+  .cta{
+    display:block; text-align:center; text-decoration:none;
+    background:var(--gold); color:var(--navy); font-weight:700;
+    padding:13px 18px; border-radius:8px; font-size:15px;
+    transition:transform .15s ease, background .15s ease;
+  }
+  .cta:hover{ background:var(--gold-light); transform:translateY(-1px); }
+  .card.free .cta{ background:transparent; color:var(--gold); border:1.5px solid var(--gold); }
+  .card.free .cta:hover{ background:rgba(232,184,74,0.1); }
+
+  .rate-note{ font-size:12px; color:var(--grey); margin-top:10px; text-align:center; }
+
+  /* Free form */
+  .free-form{ display:flex; flex-direction:column; gap:10px; }
+  .free-form input{
+    background:var(--navy); border:1px solid rgba(255,255,255,0.15);
+    color:#fff; padding:11px 12px; border-radius:8px; font-size:14px;
+  }
+  .free-form input::placeholder{ color:var(--grey); }
+  .free-form input:focus{ outline:2px solid var(--gold); border-color:transparent; }
+  .status{ font-size:13px; margin-top:8px; min-height:18px; }
+  .status.ok{ color:var(--ok); }
+  .status.err{ color:#e08a8a; }
+
+  footer{
+    text-align:center; padding:40px 20px; color:var(--grey); font-size:13px; position:relative; z-index:1;
+  }
+  footer a{ color:var(--grey); }
+
+  .amort{
+    max-width:720px; margin:56px auto 0; text-align:center;
+    background:var(--navy-2); border-radius:14px; padding:24px 28px;
+    font-size:14px; color:#dfe4ea; border:1px solid rgba(255,255,255,0.06);
+  }
+  .amort strong{ color:var(--gold); }
+</style>
+</head>
+<body>
+<div class="bg-circle"></div>
+
+<header>
+  <div class="kicker">Mintello Partnerprogramm</div>
+  <h1>Wähle deinen Einstieg</h1>
+  <p class="sub">Vier Wege, mit Klara &amp; Tina Geld zu verdienen — vom kostenlosen Start bis zur vollen Ausstattung mit persönlichem Coaching.</p>
+</header>
+
+<main>
+  <div class="grid">
+
+    <!-- FREE -->
+    <div class="card free">
+      <div class="tier-name">Free</div>
+      <div class="price-row"><span class="price">0€</span></div>
+      <div class="commission">20% Provision</div>
+      <ul class="features">
+        <li>Dein persönlicher Affiliate-Link</li>
+        <li>Basis-Grafiken zum Bewerben</li>
+        <li>Sofortiger Einstieg, kein Risiko</li>
+      </ul>
+      <form class="free-form" id="freeForm">
+        <input type="text" name="name" placeholder="Dein Name" required>
+        <input type="email" name="email" placeholder="Deine E-Mail" required>
+        <button type="submit" class="cta" style="border:none; cursor:pointer;">Kostenlos starten</button>
+      </form>
+      <div class="status" id="freeStatus"></div>
+    </div>
+
+    <!-- BASIC -->
+    <div class="card basic">
+      <div class="tier-name">Basic</div>
+      <div class="price-row"><span class="price">99€</span></div>
+      <div class="commission">25% Provision</div>
+      <ul class="features">
+        <li>Alles aus Free</li>
+        <li>Reel-Skripte für Social Media</li>
+        <li>Grafik-Templates</li>
+        <li>Fertige E-Mail-Vorlage</li>
+      </ul>
+      <a class="cta" href="https://www.checkout-ds24.com/product/707497" target="_blank" rel="noopener">Jetzt sichern</a>
+    </div>
+
+    <!-- PRO -->
+    <div class="card pro">
+      <span class="badge">Beliebt</span>
+      <div class="tier-name">Pro</div>
+      <div class="price-row">
+        <span class="price">319€</span>
+        <span class="price-old">399€</span>
+      </div>
+      <div class="commission">30% Provision · Early-Bird</div>
+      <ul class="features">
+        <li>Alles aus Basic</li>
+        <li>Professionelles Pitch-Deck</li>
+        <li>Einwand-Guide</li>
+        <li>Komplettes Telefonskript</li>
+        <li>50 Leads aus deiner Region</li>
+      </ul>
+      <a class="cta" href="https://www.checkout-ds24.com/product/707499" target="_blank" rel="noopener">Jetzt sichern</a>
+      <div class="rate-note">Ratenzahlung möglich: 3 × 119€</div>
+    </div>
+
+    <!-- ULTRA -->
+    <div class="card ultra">
+      <span class="badge">Volle Ausstattung</span>
+      <div class="tier-name">Ultra</div>
+      <div class="price-row">
+        <span class="price">799€</span>
+        <span class="price-old">999€</span>
+      </div>
+      <div class="commission">35% Provision · Early-Bird</div>
+      <ul class="features">
+        <li>Alles aus Pro</li>
+        <li>200 Leads statt 50</li>
+        <li>100 Reel-Skripte</li>
+        <li>Eigener E-Mail-Agent</li>
+        <li>1:1-Coaching &amp; Einrichtungshilfe</li>
+      </ul>
+      <a class="cta" href="https://www.checkout-ds24.com/product/707503" target="_blank" rel="noopener">Jetzt sichern</a>
+      <div class="rate-note">Ratenzahlung möglich: 3 × 279€</div>
+    </div>
+
+  </div>
+
+  <div class="amort">
+    Referenz: Klara kostet Pflegeheime je nach Größe <strong>499€ – 999€</strong> einmalig.
+    Bei Pro und Ultra hast du deine Investition oft schon nach <strong>3–4 Verkäufen</strong> wieder drin.
+  </div>
+</main>
+
+<footer>
+  Fragen? Schreib an <a href="mailto:info@mintello.de">info@mintello.de</a><br><br>
+  © 2026 Mintello · <a href="https://mintello.de">mintello.de</a>
+</footer>
+
+<script>
+document.getElementById('freeForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const form = e.target;
+  const statusEl = document.getElementById('freeStatus');
+  const btn = form.querySelector('button');
+  const data = new FormData(form);
+
+  statusEl.textContent = 'Wird gesendet...';
+  statusEl.className = 'status';
+  btn.disabled = true;
+
+  try{
+    // Formspree
+    const fsResp = await fetch('https://formspree.io/f/xojoaren', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data
+    });
+
+    // HubSpot
+    try{
+      await fetch('https://api.hsforms.com/submissions/v3/integration/submit/148763123/0dc23672-3a46-4bf0-8a58-37511e610d6c', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fields: [
+            { name: 'firstname', value: data.get('name') },
+            { name: 'email', value: data.get('email') }
+          ],
+          context: { pageUri: window.location.href, pageName: 'Mintello Partnerprogramm - Free' }
+        })
+      });
+    } catch(hsErr){ /* HubSpot-Fehler blockiert die Anmeldung nicht */ }
+
+    if(fsResp.ok){
+      statusEl.textContent = 'Danke! Wir melden uns mit deinem Affiliate-Link.';
+      statusEl.className = 'status ok';
+      form.reset();
+    } else {
+      throw new Error('Formspree error');
+    }
+  } catch(err){
+    statusEl.textContent = 'Da ist etwas schiefgelaufen. Schreib uns direkt an info@mintello.de';
+    statusEl.className = 'status err';
+  } finally {
+    btn.disabled = false;
+  }
+});
+</script>
+
+</body>
+</html>
