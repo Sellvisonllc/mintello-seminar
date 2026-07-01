@@ -228,6 +228,9 @@ function submitForm(e) {
     })
   });
 
+  // Make.com Webhook -> versendet die Bestaetigungsmail mit Video-Link ueber IONOS SMTP
+  fetch('https://hook.eu1.make.com/vq632r8wlsoyasiqv5ilsuxs1mhixt4j?email=' + encodeURIComponent(email) + '&name=' + encodeURIComponent(vorname));
+
   // Bestätigungs-E-Mail via Formspree
   fetch('https://formspree.io/f/xojoaren', {
     method: 'POST',
